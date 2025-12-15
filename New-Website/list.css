@@ -31,12 +31,19 @@
   font-family: "Roboto Slab", serif;
 }
 
+#warning{
+  display: none;
+  margin-bottom: 3%;
+  color: red;
+  font-weight: 500;
+}
+
 #list{
   height: 50px;
   border-radius: 10px;
   border: 2px solid black;
   padding: 20px;
-  
+  font-family: "Nunito", sans-serif;
 }
 
 #form{
@@ -48,19 +55,29 @@
 #submit_button{
   border-radius: 5px;
   height: 30px;
-  margin-bottom: 20px;
+  font-family: "Nunito", sans-serif;
 }
 
 .list_box{
   border: 2px solid black;
-  margin: 20px;
+  margin-top: 20px;
   width: 30%;
   height: 50px;
   border-radius: 15px;
   padding-top: 10px;
   padding-left: 20px;
+  display: flex;
 }
 
 .text_list{
   font-family: "Roboto Slab", serif;
+}
+
+.icon_box {
+  margin-top: 5px;
+  margin-right: 5%;
+  margin-left: auto;
+  cursor: pointer;
+
+  margin-bottom: auto;
 }

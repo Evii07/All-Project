@@ -17,8 +17,8 @@ function App() {
 
   const faq = [
     { q: "Who are you?", a: "Honestly, I don't know who I am anymore. People call me alfi with each perception of myself from people being different" },
-    { q: "Where am I from?", a: "I was born in Indonesia but moved to sydney for higher education" },
-    { q: "What do you like to do for fun?", a: "Well I have plenty of hobbies actually which ranges from playing basketball, drawin, playing bass and coding." },
+    { q: "Where am I from?", a: "I was born in Indonesia, but I moved to sydney for higher education" },
+    { q: "What do you like to do for fun?", a: "Well I have plenty of hobbies actually ,which ranges from playing basketball, drawin, playing bass and coding." },
   ]
 
   return (
@@ -35,12 +35,17 @@ function App() {
             }
           >
             <h1 className="title_question">{item.q}</h1>
+            <FontAwesomeIcon icon={openIndex === index ? "fa-solid fa-caret-down" : "fa-solid fa-caret-left"} className='icon'/>
           </div>
 
 
-          {openIndex === index && (
-            <DropdownBox insideText={item.a} />
-          )}
+          <div
+            className={`answear_box ${
+              openIndex === index ? "open" : ""
+            }`}
+          >
+            {item.a}
+          </div>
         </div>
       ))}
     </div>

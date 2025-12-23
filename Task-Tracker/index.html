@@ -6,11 +6,24 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title> Task Tracker </title>
         <link rel="stylesheet" href="task_style.css">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pixelify+Sans&family=Roboto+Slab:wght@100..900&display=swap');
+        </style>
     </head>
     <body>
         <div id="Body">
+            <div class="smaller_box">
+                <h1 id="title"> Task Tracker</h1>
+                <form id="form">
+                    <input type="text" id="input_text" autocomplete="off"> 
+                    <input type="submit" id="submit_button" value="helo"><br>
+                </form>
 
-
+                <label class="container">
+                  <input type="checkbox" checked="checked">
+                  <span class="checkmark">one</span>
+                </label>
+            </div>
         </div>
         <script src="task.js" defer></script>
     </body>

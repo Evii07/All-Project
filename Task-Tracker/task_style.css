@@ -109,6 +109,6 @@
 
 /* Text next to checkbox */
 .label-text {
-  flex-grow: 1;   /* fill remaining space */
+  flex-grow: 1;  
   user-select: none;
 }

@@ -108,7 +108,10 @@
 }
 
 /* Text next to checkbox */
-.label-text {
-  flex-grow: 1;  
-  user-select: none;
+.text_list{
+  margin-left: 10px;
+}
+
+.crossed{
+  text-decoration: line-through;
 }

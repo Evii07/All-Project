@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+#body{
+    position: fixed;
+    inset: 0;
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: flex-end;
+    border: 2px solid black;
+    flex-direction: column;
+    background: #44A8FF;
+    background: linear-gradient(180deg,rgba(68, 168, 255, 1) 0%, rgba(190, 225, 255, 1) 100%);
+}
+
+
+.plant_container{
+    width: 451px;
+    height: 100vh;
+    /* border: 2px solid black; */
+    align-self: center;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.ground{
+    align-self: center;
+    width: 100%;
+    background-color: #488003;
+    height: 24px;
+}
+
+#pottet_plantBottom{
+    width: 363px;
+    height: 20%;
+    background: #885324;
+    order: 1;
+}
+
+#pottet_plantTop{
+    width: 100%;
+    height: 56px;
+    border-radius: 28px;
+    background: #742B21;
+}
+
+#plant_shoot_box{
+    height: 120px;
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    /* border: 2px solid green; */
+    position: relative;
+}
+
+#plant_shoot{
+    height: 80px;
+    width: 20px;
+    background: #86D301;
+}
+
+#plant_point{
+    width: 0;
+    height: 0;
+ 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #79AA25;
+}
+
+.plant_leave_right{
+    width: 80px;
+    height: 50px;
+    transform: rotate(-26.446deg);
+    background: #79AA25;
+    border-radius: 100px / 60px;
+    position: absolute;
+    z-index: -1;
+    left: 80px;
+    bottom: 20px;
+}

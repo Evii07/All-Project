@@ -2,7 +2,9 @@
 
 const button = document.getElementById("button");
 const background = document.getElementById("body");
+
 const bamboo_shoot = document.getElementById("plant_shoot");
+
 
 const bottomFlower = document.getElementById("pottet_plantBottom");
 const flower_pot_top = document.getElementById("pottet_plantTop");
@@ -12,7 +14,7 @@ const ground = document.getElementById("ground");
 const branch1 = document.getElementById("plant_branch1");
 const branch2 = document.getElementById("plant_branch2");
 
-const leaves = document.querySelector(".plant_leave");
+const leaves = document.querySelectorAll(".plant_leave");
 
 let height = 80;
 let maxHeight = 400;
@@ -20,13 +22,14 @@ let growInterval;
 
 let branch1height = 0;
 // let maxHeightBranch1 = 80; change in css
-
+let leafTimeouts = [];
 let branch2height = 0;
 
 
 button.addEventListener('click', () => {
     const circle = document.getElementById("circle");
     circle.classList.toggle("night_button");
+
     if (circle.classList.contains("night_button")) {
         circle.style.backgroundColor = "rgb(45, 45, 114)";
         button.style.border = "3px solid rgba(126, 126, 126, 1)"
@@ -34,6 +37,10 @@ button.addEventListener('click', () => {
 
         bottomFlower.style.background = "#9f693aff";
         flower_pot_top.style.background = "#983629";
+
+        bamboo_shoot.style.background = "#5E8618";
+        branch1.style.background = "#5E8618";
+        branch2.style.background = "#5E8618";
 
         ground.style.backgroundColor = "#2B4907"
 
@@ -52,9 +59,19 @@ button.addEventListener('click', () => {
                     branch2.style.height = branch2height + "px";
                     branch2height += 0.7;
                 }    
-            } else {
-                leaves.style.opacity = "1";
-          
+
+                // https://travishorn.com/delaying-foreach-iterations/
+                // yes im too lazy to do it manually (nvm regretting this)
+                leaves.forEach((leav, i) => {
+                    const timeout = setTimeout(() => {
+                        leav.style.opacity = "1";
+                        leav.classList.add("growing_leave");
+                    }, i*8000);
+                    
+                    leafTimeouts.push(timeout);
+                });
+                
+                
             }
         
         }, 50);
@@ -72,5 +89,7 @@ button.addEventListener('click', () => {
         
         ground.style.backgroundColor = "#488003";
         clearInterval(growInterval);
+        leafTimeouts.forEach(t => clearTimeout(t));
+        leafTimeouts = [];
     }
 });

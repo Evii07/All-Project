@@ -25,6 +25,10 @@ let branch1height = 0;
 let leafTimeouts = [];
 let branch2height = 0;
 
+let leafInterval;
+
+let leavesStarted = false;
+let leafIndex = 0;
 
 button.addEventListener('click', () => {
     const circle = document.getElementById("circle");
@@ -66,11 +70,11 @@ button.addEventListener('click', () => {
                     const timeout = setTimeout(() => {
                         leav.style.opacity = "1";
                         leav.classList.add("growing_leave");
-                    }, i*8000);
+                    }, i*9000);
                     
                     leafTimeouts.push(timeout);
                 });
-                
+                    
                 
             }
         
@@ -92,4 +96,13 @@ button.addEventListener('click', () => {
         leafTimeouts.forEach(t => clearTimeout(t));
         leafTimeouts = [];
     }
+});
+
+const accordion = document.getElementById("accordion");
+const info_box = document.getElementById("explanation_box")
+
+info_box.classList.add("hidden")
+
+accordion.addEventListener("click", function() {
+    info_box.classList.toggle("hidden");
 });

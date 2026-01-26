@@ -214,13 +214,14 @@
 
 #explanation_box{
     width: 300px;
-    height: 200px;
+    height: 250px;
     background-color: rgb(245, 254, 216);
     z-index: 2;
 
     padding: 14px;
     color: #426407;
-    font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Roboto Slab", serif;
+    font-size: 15px;
     border-bottom-right-radius: 25px;
     
     
